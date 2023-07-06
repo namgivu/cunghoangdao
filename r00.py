@@ -1,7 +1,10 @@
-def run(birthday_s):
+def run(birthday_s=None):
     # birthday_s = input('Enter your birthday e.g. 1st June \n')
     # birthday_s = '22 Dec'
     # birthday_s = '22/12'  # vn date format
+
+    if birthday_s is None:
+        birthday_s = input('Enter your birthday e.g. 22/12, 22nd Dec \n')
 
     try:
         from dateutil import parser; str2date=parser.parse
@@ -73,4 +76,5 @@ def run(birthday_s):
     print(f'{d.day:02d}/{d.month:02d} {name:12s} {vn}')
 
 if __name__ == '__main__':
-    run('22/12')
+    # run('22/12')
+    run()
